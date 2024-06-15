@@ -54,7 +54,7 @@ public class RegistarUsuarioController {
             AlertMessage.show(Alert.AlertType.ERROR, "ERROR", "ambas contraseñas deben ser iguales");
             return;
         }
-        if(edad1 < 18 || edad1 >65){
+        if(edad1 < 18 || edad1 > 65){
             AlertMessage.show(Alert.AlertType.ERROR, "ERROR", "el rango de edad no puede estar mal");
             return;
         }

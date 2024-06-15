@@ -40,10 +40,26 @@ public class MenuController implements Initializable {
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
-    public void HandleAgregar(ActionEvent event) {
+    public void HandleAgregar(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(DemoApplication.class.getResource("agregar-servicio-view.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Agregar servicio");
+        stage.show();
+        ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
-    public void handleEditar(ActionEvent event) {
+    public void handleEditar(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(DemoApplication.class.getResource("administrar-servicios-view.fxml"));
+        Parent root = loader.load();
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("administrar servicio");
+        stage.show();
+        ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
     public void handleEliminar(ActionEvent event) {

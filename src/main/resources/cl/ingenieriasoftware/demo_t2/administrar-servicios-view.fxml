@@ -4,13 +4,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: C9E8B8;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.ingenieriasoftware.demo_t2.AdministrarServiciosView">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: C9E8B8;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.ingenieriasoftware.demo_t2.controllers.AdministrarServiciosController">
    <children>
       <Label layoutX="135.0" layoutY="40.0" text="Administrar Servicios" textFill="#333333">
          <font>
             <Font name="System Bold" size="33.0" />
          </font></Label>
-      <MenuButton layoutX="104.0" layoutY="149.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="392.0" style="-fx-background-radius: 9;" text="Seleccionar Servicio">
+      <MenuButton layoutX="104.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleMenuSeleccionarServicio" prefHeight="39.0" prefWidth="392.0" style="-fx-background-radius: 9;" text="Seleccionar Servicio">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -19,17 +19,17 @@
             <Font size="18.0" />
          </font>
       </MenuButton>
-      <Button layoutX="413.0" layoutY="290.0" mnemonicParsing="false" style="-fx-background-color: A9D8E4; -fx-border-radius: 5;" text="Agregar" textFill="#333333">
+      <Button fx:id="btnAgregar" layoutX="413.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleAgregar" style="-fx-background-color: A9D8E4; -fx-border-radius: 5;" text="Agregar" textFill="#333333">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="104.0" layoutY="212.0" mnemonicParsing="false" style="-fx-background-color: A9D8E4; -fx-border-radius: 5;" text="Modificar" textFill="#333333">
+      <Button fx:id="btnModificar" layoutX="104.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleModificar" style="-fx-background-color: A9D8E4; -fx-border-radius: 5;" text="Modificar" textFill="#333333">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="413.0" layoutY="212.0" mnemonicParsing="false" style="-fx-background-color: F7C3B6; -fx-border-radius: 5;" text="Eliminar" textFill="#333333">
+      <Button fx:id="btnEliminar" layoutX="413.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleEliminar" style="-fx-background-color: F7C3B6; -fx-border-radius: 5;" text="Eliminar" textFill="#333333">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -44,7 +44,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button fx:id="btnVolver" layoutX="40.0" layoutY="29.0" mnemonicParsing="false" style="-fx-background-radius: 100; -fx-background-color: F7C3B6;" text="Volver">
+      <Button fx:id="btnVolver" layoutX="40.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleVolver" style="-fx-background-radius: 100; -fx-background-color: F7C3B6;" text="Volver">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

@@ -20,9 +20,13 @@ public class leerArchivoRegistros {
                 String email = campos[2].trim();
                 String contrasena = campos[3].trim();
                 int edad = Integer.parseInt(campos[4].trim());
+                int puntos = Integer.parseInt(campos[5].trim());
 
                 UsuarioService.getInstance().addUsuario(nombre, apellido, email, contrasena, edad);
-                int code = Integer.parseInt(campos[5].trim());
+                if (puntos != 0){
+                    UsuarioService.getInstance().getUsuarioC(email).setPuntos(puntos);
+                }
+                int code = Integer.parseInt(campos[6].trim());
                 if( code != 0){
                     UsuarioService.getInstance().getUsuarioC(email).setAdmin(code);
                 }

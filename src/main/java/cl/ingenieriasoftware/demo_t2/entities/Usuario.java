@@ -8,6 +8,7 @@ public class Usuario {
     private int edad;
     private int Admin;
     private boolean activo;
+    private int puntos;
     public Usuario(String nombre, String apellido, String email, String contrasena, int edad){
         this.nombre = nombre;
         this.apellido = apellido;
@@ -16,6 +17,7 @@ public class Usuario {
         this.edad = edad;
         this.Admin = 0;
         this.activo = false;
+        this.puntos = 0;
     }
 
     public String getEmail(){return this.email;}
@@ -43,5 +45,13 @@ public class Usuario {
 
     public boolean getActivo() {
         return activo;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    public int getPuntos() {
+        return puntos;
     }
 }

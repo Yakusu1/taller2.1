@@ -9,9 +9,10 @@ public class EscribirArchivoTexto {
     public static void main(String nombre, String apellido, String email, String contrasena, int edad) {
         String nombreArchivo = "usuarios.txt";
         String code = String.valueOf(UsuarioService.getInstance().getUsuarioC(email).getAdmin());
+        String puntos = String.valueOf(UsuarioService.getInstance().getUsuarioC(email).getPuntos());
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(nombreArchivo, true))) {
             bw.newLine();
-            bw.write(nombre + "," + apellido + "," + email + "," + contrasena + "," + edad + "," + code);
+            bw.write(nombre + "," + apellido + "," + email + "," + contrasena + "," + edad + "," + "," + puntos+ ","+ code);
         } catch (IOException e) {
             e.printStackTrace();
         }
