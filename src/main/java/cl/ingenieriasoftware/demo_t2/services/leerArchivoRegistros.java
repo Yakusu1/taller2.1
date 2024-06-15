@@ -5,6 +5,10 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class leerArchivoRegistros {
+
+    /**
+     * Método que lee el archivo
+     */
     public static void main() {
         String nombreArchivo = "usuarios.txt";
         File archivo = new File(nombreArchivo);
@@ -37,5 +41,24 @@ public class leerArchivoRegistros {
             System.out.println("Error");
 
         }
+
+        nombreArchivo = "servicios.txt";
+        archivo = new File(nombreArchivo);
+
+        try (Scanner entrada = new Scanner(archivo)) {
+            int i = 0;
+            while (entrada.hasNext()) {
+                String linea = entrada.nextLine();
+                String[] datos = linea.split(",");
+                String nombre = datos[0];
+                String precio = datos[1];
+                ServicioService.getInstance().addServicio(nombre, Integer.parseInt(precio));
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 }

@@ -41,7 +41,11 @@ public class AdministrarServiciosController {
     @FXML
     private Label lblTitulo;
 
-    // Método para manejar el evento del botón "Volver"
+    /**
+     * Método que permite volver a la interfaz anterior
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void handleVolver(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(DemoApplication.class.getResource("menu-usuario-view.fxml"));
@@ -55,7 +59,11 @@ public class AdministrarServiciosController {
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
-    // Método para manejar el evento del botón "Agregar"
+    /**
+     * Método que al accionar el botón de agregar va hacía otra interfaz para agregar el servicio
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void handleAgregar(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(DemoApplication.class.getResource("agregar-servicio-view.fxml"));
@@ -68,21 +76,30 @@ public class AdministrarServiciosController {
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
-    // Método para manejar el evento del botón "Modificar"
+    /**
+     * Método que al accionar el botoón de moidificar permite ir a otra interfaz para modificar el servicio
+     * @param event
+     */
     @FXML
     private void handleModificar(ActionEvent event) {
         System.out.println("Modificar button clicked");
         // Lógica para modificar un servicio
     }
 
-    // Método para manejar el evento del botón "Eliminar"
+    /**
+     * Método que al accionar el boton de eliminar permite borrar un servicio
+     * @param event
+     */
     @FXML
     private void handleEliminar(ActionEvent event) {
         System.out.println("Eliminar button clicked");
         // Lógica para eliminar un servicio
     }
 
-    // Método para manejar la selección del menú
+    /**
+     * Método que permite seleccionar un servicio del menú
+     * @param event
+     */
     @FXML
     private void handleMenuSeleccionarServicio(ActionEvent event) {
         MenuItem selectedItem = menuSeleccionarServicio.getItems().stream()

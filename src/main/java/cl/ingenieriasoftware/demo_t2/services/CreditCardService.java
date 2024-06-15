@@ -19,6 +19,14 @@ public class CreditCardService {
         return instance;
     }
 
+    /**
+     *Método que permite agregar una tarjeta
+     * @param numero de la tarjeta
+     * @param nombre del usuario de la tarjeta
+     * @param mes de vencimiento de la tarjeta
+     * @param anio de vencimiento de la tarjeta
+     * @param codigoSeguridad de la tarjeta
+     */
     public void addCreditCard(String numero, String nombre, String mes, String anio, String codigoSeguridad) {
 
         for (CreditCard tarjeta : tarjetas) {

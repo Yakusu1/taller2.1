@@ -30,6 +30,12 @@ public class RegistarUsuarioController {
     @FXML
     private TextField txtEdad;
     private ObservableList<Usuario> UsuarioList;
+
+    /**
+     * Método que permite registar usuario cuando se completan todos los campos requeridos
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void handleRegistrar(ActionEvent event) throws IOException {
         String nombre = txtNombre.getText();
@@ -75,6 +81,11 @@ public class RegistarUsuarioController {
 
     }
 
+    /**
+     * Método que permite volver a la interfaz anterior
+     * @param event
+     * @throws IOException
+     */
     public void handleVolver(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(DemoApplication.class.getResource("iniciar-sesion-usuario-view.fxml"));
         Parent root = loader.load();

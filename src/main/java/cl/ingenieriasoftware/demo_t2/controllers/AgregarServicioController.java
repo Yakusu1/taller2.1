@@ -21,6 +21,10 @@ public class AgregarServicioController {
     @FXML
     private TextField textPrecio;
 
+    /**
+     * Método que al accionar el boton de agregar permite agregar un servicio
+     * @param event
+     */
     @FXML
     public void handleAgregar(ActionEvent event) {
         String nombre = textNombre.getText();
@@ -47,6 +51,12 @@ public class AgregarServicioController {
         }
         AlertMessage.show(Alert.AlertType.INFORMATION, "AGREGADO", "el servicio se a agregado correctamente");
     }
+
+    /**
+     * Método que al accionar el botón permite volver a la interfaz anterior
+     * @param event
+     * @throws IOException
+     */
 
     public void handleVolver(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(DemoApplication.class.getResource("menu-usuario-view.fxml"));

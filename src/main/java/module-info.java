@@ -8,4 +8,6 @@ module cl.ingenieriasoftware.demo_t2 {
     opens cl.ingenieriasoftware.demo_t2.controllers to javafx.fxml;
     exports cl.ingenieriasoftware.demo_t2;
     exports cl.ingenieriasoftware.demo_t2.controllers;
+    exports cl.ingenieriasoftware.demo_t2.entities;
+    opens cl.ingenieriasoftware.demo_t2.entities to javafx.fxml;
 }

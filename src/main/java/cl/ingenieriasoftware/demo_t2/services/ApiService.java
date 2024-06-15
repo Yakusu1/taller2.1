@@ -17,6 +17,13 @@ public class ApiService {
 
     private static final String BASE_URL = "https://idonosob.pythonanywhere.com";
 
+    /**
+     * Método que permite iniciar sesión al usuario en la api
+     * @param username nombre de usuario
+     * @param password contraseña del usuario
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static void login(String username, String password) throws IOException, InterruptedException {
         String loginUrl = BASE_URL + "/login";
 
@@ -45,6 +52,16 @@ public class ApiService {
         }
     }
 
+    /**
+     * Método que permite verificar si existe una tarjeta
+     * @param numeroTarjeta del usuario
+     * @param mesVencimiento de la tarjeta
+     * @param anioVencimiento de la tarjeta
+     * @param codigoSeguridad de la tarjeta
+     * @return true si la tarjeta es valida, false si la tarjeta no está dentro del sistema
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static boolean verificarTarjeta(String numeroTarjeta, String mesVencimiento, String anioVencimiento, String codigoSeguridad) throws IOException, InterruptedException {
         String validarTarjetaUrl = BASE_URL + "/validar_tarjeta";
 
@@ -91,6 +108,16 @@ public class ApiService {
         }
     }
 
+    /**
+     * Método que permite obtener el saldo de la terjeta de credito
+     * @param numeroTarjeta del usuario
+     * @param mesVencimiento de la tarjeta
+     * @param anioVencimiento de la tarjeta
+     * @param codigoSeguridad de la tarjeta
+     * @return el saldo total de la tarjeta de credito
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static String obtenerSaldo(String numeroTarjeta, String mesVencimiento, String anioVencimiento, String codigoSeguridad) throws IOException, InterruptedException {
         String Saldo = BASE_URL + "/obtener_saldo";
         String requestBody = String.format("{\"numero_tarjeta\":\"%s\",\"mes_vencimiento\":\"%s\",\"anio_vencimiento\":\"%s\",\"codigo_seguridad\":\"%s\"}",
@@ -109,13 +136,5 @@ public class ApiService {
         String hola = String.valueOf(responseBodyJson);
         return hola;
     }
-
-
-    // Ver mas tarde
-    public static void registrarUsuario(String nombre, int edad, String correo, String contrasenia){
-        String registarUsuario = BASE_URL + "/registar_usuario";
-
-    }
-
 
 }

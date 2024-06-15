@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: C9E8B8;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.ingenieriasoftware.demo_t2.controllers.ComprarGiftcardController">
+   <children>
+         <Label layoutX="165.0" layoutY="36.0" text="Comprar Giftcard" textFill="#333333">
+            <font>
+               <Font name="System Bold" size="33.0" />
+            </font>
+         </Label>
+         <Button fx:id="btnPuntos" layoutX="103.0" layoutY="336.0" mnemonicParsing="false" onAction="#handlePagar" style="-fx-background-color: A9D8E4; -fx-border-radius: 5;" text="Pago Puntos" textFill="#333333">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnPagar" layoutX="401.0" layoutY="336.0" mnemonicParsing="false" style="-fx-border-radius: 5; -fx-background-color: A9D8E4;" text="Pago Crédito" textFill="#333333">
+                <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Button>
+         <Button fx:id="btnVolver" layoutX="40.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleVolver" style="-fx-background-radius: 100; -fx-background-color: F7C3B6;" text="Volver">
+            <font>
+               <Font name="System Bold" size="15.0" />
+            </font>
+         </Button>
+         <TableView fx:id="Tabla" layoutX="31.0" layoutY="118.0" prefHeight="181.0" prefWidth="538.0">
+           <columns>
+             <TableColumn fx:id="servicio" prefWidth="307.4000129699707" text="Servicio" />
+             <TableColumn fx:id="precio" prefWidth="129.0" text="Precio" />
+               <TableColumn fx:id="seleccion" prefWidth="100.59994506835938" text="Seleccionar" />
+           </columns>
+         </TableView>
+         <Label layoutX="60.0" layoutY="86.0" text="Ingrese los servicios que desea adquirir">
+            <font>
+               <Font size="15.0" />
+            </font>
+         </Label>
+         <Label fx:id="total" layoutX="445.0" layoutY="313.0" text="Total: " />
+   </children>
+</AnchorPane>

@@ -28,6 +28,12 @@ public class IniciarSesionController {
     @FXML
     private TextField txtContrasena;
     private ObservableList<Usuario> UsuarioList;
+
+    /**
+     * Método que permite iniciar sesión al usuario al momento de accionar el botón ingresar
+     * @param event
+     * @throws IOException
+     */
     @FXML
     private void handleIngresar(ActionEvent event) throws IOException {
         leerArchivoRegistros.main();
@@ -53,6 +59,11 @@ public class IniciarSesionController {
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
+    /**
+     * Método que redirige a una interfaz para el regisitro de un usuario nuevo
+     * @param event
+     * @throws IOException
+     */
     public void handleRegistrar(ActionEvent event) throws IOException {
         leerArchivoRegistros.main();
         FXMLLoader loader = new FXMLLoader(DemoApplication.class.getResource("registrar-usuario-view.fxml"));

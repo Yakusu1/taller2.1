@@ -23,6 +23,12 @@ public class ComprarGiftcardController {
     private TextField textFechaExp;
     @FXML
     private TextField textCode;
+
+    /**
+     *
+     * Método que al accionar el botón pagar realiza el cobro correspondiente a la tarjeta
+     * @param event
+     */
     @FXML
     public void handlePagar(ActionEvent event) {
         String numTarjeta = textNumTarjeta.getText();
@@ -56,6 +62,11 @@ public class ComprarGiftcardController {
         }
     }
 
+    /**
+     * Método que permite volver a la interfaz anterior al accionar el botón volver
+     * @param event
+     * @throws IOException
+     */
     public void handleVolver(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(DemoApplication.class.getResource("menu-usuario-view.fxml"));
         Parent root = loader.load();
