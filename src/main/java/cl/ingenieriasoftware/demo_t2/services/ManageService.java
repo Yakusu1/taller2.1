@@ -1,51 +1,56 @@
 package cl.ingenieriasoftware.demo_t2.services;
 
 import cl.ingenieriasoftware.demo_t2.entities.Servicio;
-import java.util.LinkedList;
 
-public class ServicioService {
-    private static ServicioService instance;
-    private LinkedList<Servicio> listaServicios;
-    private ServicioService() {
-        this.listaServicios = new LinkedList<>();
-    }
+import java.io.*;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+
+public class ManageService {
+
+    private static ManageService instance;
+    private static LinkedList<Servicio> listaServicios;
+    private ManageService() {this.listaServicios = new LinkedList<>();}
 
     /**
-     * Método que obtiene la instancia de la clase ServicioService
-     * @return
+     * Método que crea ManageService
+     * @return instancia del ManageService
      */
-    public static ServicioService getInstance(){
+
+    public static ManageService getInstance() {
         if (instance == null) {
-            instance = new ServicioService();
+            instance = new ManageService();
         }
         return instance;
     }
 
     /**
-     * Método para agregar un servicio
-     *
-     * @param nombre del servicio
-     * @param precio del servicio
-     * @return true si se agrega el servicio, false si ya existe
+     * Método que lee el archivo con los servicio y crea los servicio
      */
+    public static void leerArchivo(){
+        String Nombrearchivo = "servicios.txt";
+        File archivo = new File(Nombrearchivo);
 
-    public boolean addServicio(String nombre, int precio){
-        for(Servicio servicio : listaServicios){
-            if(servicio.getNombre().equals(nombre)){
-                return false;
+        try (Scanner entrada = new Scanner(archivo)){
+            int i = 0;
+            while (entrada.hasNext()){
+                String linea = entrada.nextLine();
+                String[] datos = linea.split(",");
+                String nombre = datos[0];
+                String precio = datos[1];
+                addServicio(nombre, precio);
             }
+
+        } catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
         }
-        Servicio servicio = new Servicio(nombre, precio);
+    }
+
+    public static boolean addServicio(String nombre, String precio){
+        Servicio servicio = new Servicio(nombre, Integer.parseInt(precio));
         listaServicios.add(servicio);
         return true;
-    }
-    public Servicio buscarServicio(String nombre){
-        for (Servicio servicio : listaServicios){
-            if (servicio.getNombre().equals(nombre)){
-                return servicio;
-            }
-        }
-        return null;
     }
 
     /**
@@ -82,8 +87,5 @@ public class ServicioService {
         return true;
     }
 
-    public LinkedList<Servicio> getListaServicios() {
-        return listaServicios;
-    }
 
 }
